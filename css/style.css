@@ -39,9 +39,26 @@ body {
   position: fixed;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   width: calc(100% - 300px);
   height: 70px;
-  background-color: rgba(255, 110, 98, 0.4);
+  padding-right: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.upgrade {
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.01s;
+}
+.upgrade:hover {
+  transform: scale(1.05);
 }
 
 /* footer */
