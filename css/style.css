@@ -37,25 +37,26 @@ a:hover {
 .navbar_main {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 200px;
   height: 100%;
   background-color: #000;
 }
-[class*=nav_]{
+/* [class*=nav_]{
   width: 100%;
-}
+} */
 /* nav_logo */
 .nav_logo img {
   width: 85%;
   height: 70px;
-  padding: 15.5px;
+  padding: 15px;
 }
 
 /* nav_home */
 .nav_home {
-  padding: 20px;
+  padding: 20px 20px 0;
 }
-.nav_home ul li {
+.nav_home ul:not(last child) li {
   margin-bottom: 15px;
 }
 .nav_home ul li img {
@@ -69,14 +70,12 @@ a:hover {
 
 /* nav_playlist */
 .nav_playlist {
-  flex-grow: 2;
   padding: 0 20px;
 }
 .nav_playlist h5 {
   text-transform: uppercase;
   color: #7F8C8D;
 }
-
 .aggiungi {
   display: flex;
   align-items: center;
@@ -91,13 +90,57 @@ a:hover {
   font-size: 30px;
   margin-right: 15px;
 }
+.playlist_ul {
+  flex-grow: 2;
+  padding: 0 20px;
+  min-height: 180px;
+  overflow-y: auto;
+}
 
-
-
-
+/* nav_bottom */
 .nav_bottom {
+  padding: 10px 20px;
+  color: #7F8C8D;
+}
+.bottom_nav_top i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.bottom_nav_top {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #7F8C8D;
+}
+.bottom_nav_top:hover,
+.bottom_nav_bottom:hover {
+  cursor: pointer;
+  color: #fff;
+}
+.bottom_nav_bottom {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px 0 0;
+}
+.profile_icon {
+  display: inline-block;
+  margin-right: 15px;
+  width: 25px;
+  height: 25px;
+  padding: 2px;
+  border-radius: 50px;
+  background-image: url(../img/profile.svg);
+  background-position: center;
+  background-color: #7F8C8D;
+}
 
-  background-color: #3498DB;
+.bottom_nav_bottom span {
+  font-weight: 700;
+  color: #fff;
+  transition: 0.01s;
+}
+.bottom_nav_bottom span:hover {
+  transform: scale(1.05);
 }
 /* content main */
 .content_main {
@@ -139,4 +182,28 @@ a:hover {
   width: 100%;
   height: 90px;
   background-color: lightyellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* query */
+@media screen and (max-width: 780px) {
+  .navbar_main {
+    width: 100px;
+  }
+  .visible_lg {
+    visibility: hidden;
+  }
+  .call_to,
+  .content_main {
+    width: calc(100% - 100px);
+  }
 }
