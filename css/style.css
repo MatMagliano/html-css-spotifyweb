@@ -23,12 +23,12 @@ a:hover {
 .visible_lg {
   visibility: visible;
 }
-.visible_xs {
-  display: none;
-}
 .wrapper {
   width: 100%;
   height: 100vh;
+}
+.wrapper_70 {
+  width: 70%;
 }
 /* main */
 .all_main {
@@ -42,6 +42,7 @@ a:hover {
 .navbar_main {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   width: 200px;
   height: 100%;
   background-color: #000;
@@ -93,10 +94,10 @@ a:hover {
   margin-right: 15px;
 }
 .playlist_ul {
-  flex-grow: 2;
   padding: 0 20px;
   min-height: 180px;
   overflow-y: auto;
+  flex-grow: 2;
 }
 
 /* nav_bottom */
@@ -165,7 +166,6 @@ a:hover {
   width: 60%;
   margin-bottom: 10px;
 }
-
 .xs_nav img:hover,
 .nav_xs_bottom i:hover,
 .profile_icon{
@@ -179,14 +179,42 @@ a:hover {
 .nav_xs_bottom i {
   display: inline-block;
 }
+
 /* content main */
 .content_main {
   width: calc(100% - 200px);
   height: 100%;
   padding: 90px 20px 20px;
-  background-color: lightgreen;
+  background-color: #0F1221;
   overflow-y: scroll;
+  text-align: center;
 }
+
+/* content list */
+.content_list ul li  {
+  padding: 4px 12px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.content_list ul li a.active:after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #1ed760;
+  margin: 3px auto 0;
+}
+.content_list ul li a.active_none:after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #1ed760;
+  margin: 3px auto 0;
+  visibility: hidden;
+}
+
+
 .call_to {
   position: fixed;
   top: 0;
@@ -214,6 +242,12 @@ a:hover {
   transform: scale(1.08);
 }
 
+.content_list a{
+  margin-bottom: 10px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
 /* footer */
 .footer {
   width: 100%;
@@ -232,6 +266,11 @@ a:hover {
 
 
 /* query */
+@media screen and (min-width: 780px) {
+  .visible_xs {
+    display: none;
+  }
+}
 @media screen and (max-width: 780px) {
   .navbar_main {
     width: 50px;
