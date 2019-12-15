@@ -20,7 +20,12 @@ a:hover {
   text-decoration: none;
   color: #FFF;
 }
-
+.visible_lg {
+  visibility: visible;
+}
+.visible_xs {
+  display: none;
+}
 .wrapper {
   width: 100%;
   height: 100vh;
@@ -37,14 +42,11 @@ a:hover {
 .navbar_main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 200px;
   height: 100%;
   background-color: #000;
 }
-/* [class*=nav_]{
-  width: 100%;
-} */
+
 /* nav_logo */
 .nav_logo img {
   width: 85%;
@@ -133,7 +135,6 @@ a:hover {
   background-position: center;
   background-color: #7F8C8D;
 }
-
 .bottom_nav_bottom span {
   font-weight: 700;
   color: #fff;
@@ -141,6 +142,42 @@ a:hover {
 }
 .bottom_nav_bottom span:hover {
   transform: scale(1.05);
+}
+
+/* nav_xs */
+.nav_xs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.xs_nav_top {
+  width: 100%;
+  margin-top: 10px;
+}
+.xs_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 2;
+}
+.xs_nav_top img{
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.xs_nav img:hover,
+.nav_xs_bottom i:hover,
+.profile_icon{
+  cursor: pointer;
+}
+.nav_xs_bottom {
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+.nav_xs_bottom i {
+  display: inline-block;
 }
 /* content main */
 .content_main {
@@ -174,7 +211,7 @@ a:hover {
   transition: 0.01s;
 }
 .upgrade:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* footer */
@@ -197,13 +234,21 @@ a:hover {
 /* query */
 @media screen and (max-width: 780px) {
   .navbar_main {
-    width: 100px;
+    width: 50px;
+    align-items: center;
+    padding-top: 10px;
   }
   .visible_lg {
-    visibility: hidden;
+    display: none;
+  }
+  .visible_xs {
+    display: contents;
+  }
+  .profile_icon {
+    margin: 10px 0;
   }
   .call_to,
   .content_main {
-    width: calc(100% - 100px);
+    width: calc(100% - 50px);
   }
 }
