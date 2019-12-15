@@ -16,6 +16,21 @@ a {
   font-weight: 600;
   color: #7F8C8D;
 }
+h2  {
+  margin-left: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+h5 a{
+  font-weight: 700;
+  color: #fff;
+}
+h5 a:hover {
+  text-decoration: underline;
+}
+p {
+  color: #7F8C8D;
+}
 a:hover {
   text-decoration: none;
   color: #FFF;
@@ -214,7 +229,28 @@ a:hover {
   visibility: hidden;
 }
 
-
+/* recently_played */
+.cover_played {
+  text-align: left;
+}
+.cover_played p {
+  margin-left: 15px;
+}
+.cover {
+  margin-bottom: 30px;
+}
+.cover,
+.cover2 {
+  margin-top: 30px;
+  text-align: center;
+}
+.popular img {
+  border-radius: 50%;
+}
+.cover img,
+.cover2 img {
+  width: 105%;
+}
 .call_to {
   position: fixed;
   top: 0;
@@ -266,6 +302,11 @@ a:hover {
 
 
 /* query */
+@media screen and (min-width: 780px) and (max-width: 992px) {
+  .cover2 {
+    margin-bottom: 30px;
+  }
+}
 @media screen and (min-width: 780px) {
   .visible_xs {
     display: none;
@@ -285,6 +326,10 @@ a:hover {
   }
   .profile_icon {
     margin: 10px 0;
+  }
+  .cover,
+  .cover2 {
+    margin-bottom: 30px;
   }
   .call_to,
   .content_main {
