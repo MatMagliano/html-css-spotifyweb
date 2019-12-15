@@ -229,28 +229,56 @@ a:hover {
   visibility: hidden;
 }
 
-/* recently_played */
+/* album */
 .cover_played {
   text-align: left;
 }
 .cover_played p {
   margin-left: 15px;
 }
-.cover {
-  margin-bottom: 30px;
-}
-.cover,
-.cover2 {
-  margin-top: 30px;
+.album {
+  margin-bottom: 40px;
   text-align: center;
+}
+.stranger {
+  margin-bottom: 20px;
+}
+.cover {
+  position: relative;
+  margin-top: 30px;
+}
+.cover img {
+  width: 100%;
 }
 .popular img {
   border-radius: 50%;
 }
-.cover img,
-.cover2 img {
-  width: 105%;
+.cover .layover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, .7);
 }
+.popular .cover .layover {
+  border-radius: 50%;
+}
+.cover .layover i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: #fff;
+}
+.cover:hover .layover {
+  display: block;
+}
+
+/* call to action */
 .call_to {
   position: fixed;
   top: 0;
@@ -278,11 +306,6 @@ a:hover {
   transform: scale(1.08);
 }
 
-.content_list a{
-  margin-bottom: 10px;
-  padding: 0 10px;
-  text-transform: uppercase;
-}
 
 /* footer */
 .footer {
@@ -302,9 +325,18 @@ a:hover {
 
 
 /* query */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .stranger {
+    margin-bottom: 0;
+  }
+  p,
+  h5 {
+   font-size: 0.9em;
+  }
+}
 @media screen and (min-width: 780px) and (max-width: 992px) {
-  .cover2 {
-    margin-bottom: 30px;
+  .stranger {
+    margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 780px) {
@@ -327,8 +359,7 @@ a:hover {
   .profile_icon {
     margin: 10px 0;
   }
-  .cover,
-  .cover2 {
+  .album {
     margin-bottom: 30px;
   }
   .call_to,
